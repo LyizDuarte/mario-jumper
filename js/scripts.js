@@ -3,6 +3,7 @@ const pipe = document.querySelector(".pipe");
 const clouds = document.querySelector(".clouds");
 const gameOver = document.querySelector(".game-over-text");
 const scoreText = document.querySelector(".score");
+const restartButton = document.querySelector(".restart-button");
 
 let score = 0;
 
@@ -20,6 +21,7 @@ const loop = setInterval(() => {
     .getComputedStyle(mario)
     .bottom.replace("px", "");
   const cloudsPosition = clouds.offsetLeft;
+  console.log(marioPosition);
 
   if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 105) {
     pipe.style.animation = "none";
@@ -43,6 +45,11 @@ const loop = setInterval(() => {
     gameOver.style.color = "red";
     gameOver.style.fontFamily = "Calibri";
 
+    restartButton.style.display = "block";
+    restartButton.style.position = "absolute";
+    restartButton.style.top = "60%";
+    restartButton.style.left = "46.5%";
+
     clearInterval(loop);
   } else if (pipePosition < 0) {
     score += 1;
@@ -51,3 +58,7 @@ const loop = setInterval(() => {
 }, 10);
 
 document.addEventListener("keydown", jump);
+
+restartButton.addEventListener("click", () => {
+  location.reload();
+});

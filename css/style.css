@@ -28,7 +28,7 @@
 .mario{
     width: 150px;
     position: absolute;    
-    bottom: 0px
+    bottom: 0px;
 }
 
 .jump{
@@ -47,6 +47,46 @@
     width: 500px;
     animation: clouds-animation 10s infinite linear;
 }
+
+.restart-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 12px;
+    gap: 8px;
+    height: 34px;
+    width: 112px;
+    border: none;
+    background: #e6271d44;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .lable {
+    line-height: 20px;
+    font-size: 17px;
+    color: #FF342B;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+  }
+  
+  .restart-button:hover {
+    background: #ff362b52;
+  }
+  
+  .restart-button:hover .svg-icon {
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
 
 @keyframes pipe-animation {
     from{
